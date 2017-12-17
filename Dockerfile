@@ -16,10 +16,10 @@ CMD ["/sbin/my_init"]
 #RUN DEBIAN_FRONTEND="noninteractive" apt-get update
 #RUN DEBIAN_FRONTEND="noninteractive" apt-get -y upgrade
 #RUN DEBIAN_FRONTEND="noninteractive" apt-get update --fix-missing
-#RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+
 
 ### Set the timezone Asia/Jakarta
-#RUN echo "Asia/Jakarta" > /etc/timezone && rm /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+RUN timedatectl set-timezone Asia/Jakarta
 
 
 
